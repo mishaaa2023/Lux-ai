@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXAI Models - AI-Powered Visuals for Luxury Jewelry Brands</title>
+    <meta name="description" content="Replace $15K photoshoots with scroll-stopping jewelry visuals delivered in 72 hours. Studio-free, waste-free, built to convert.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+.responsive-logo {
+    width: 50%; /* Set the width to 50% of the container */
+    max-width: 200px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .responsive-logo {
+        width: 70%; /* Increase size on smaller screens */
+    }
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0;
+    color: #0D4D5A;
+  }
+
+.section-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .model-card {
+    position: relative;
+    flex: 1 1 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .model-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 24px rgba(255 255 255 / 0.1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  .model-card:hover .model-image {
+    animation: subtleScaleRotate 5s ease-in-out infinite alternate;
+  }
+  @keyframes subtleScaleRotate {
+    0% {
+      transform: scale(1) rotateY(0deg);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.05) rotateY(10deg);
+      filter: brightness(1.08);
+    }
+    100% {
+      transform: scale(1) rotateY(0deg);
+      filter: brightness(1);
+    }
+  }
+  
+  .jewelry-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.3));
+    transition: transform 0.3s ease;
+    background: white;
+    border-radius: 0.5rem;
+  }
+  .jewelry-image:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(255 214 88 / 0.8));
+  }
+  .arrow-svg {
+    position: absolute;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
+    stroke: #fff;
+    stroke-width: 3;
+    fill: none;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .arrow-1 {
+    left: 115px;
+    top: 105%;
+  }
+  .arrow-2 {
+    left: 115px;
+    top: 105%;
+  }
+  /* Animated subtle arrow drawing */
+  @keyframes drawArrow {
+    0% {
+      stroke-dashoffset: 150;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  .arrow-path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: drawArrow 2s ease forwards;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .section-container {
+      justify-content: space-around;
+      gap: 3rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .section-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
+    .arrow-svg {
+      display: none; /* Hide arrow for small devices for cleaner UI */
+    }
+  }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand responsive-logo">
+                <img src="/Imgggg/Img/logo.jpeg" class="responsive-logo"/>
+               
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#value-stack" class="nav-link">Value</a></li>
+                <li><a href="#how-it-works" class="nav-link">Process</a></li>
+                <li><a href="#results" class="nav-link">Results</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="https://calendly.com/contact-luxaimodels/30min" class="nav-link nav-cta">Book Call</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-headline">
+                    Replace <span class="gold-accent">$15K Photoshoots</span> with 
+                    <br>Scroll-Stopping Jewelry Visuals —
+                    <br><span class="teal-accent">Delivered in 72 Hours</span>
+                </h1>
+                <p class="hero-subheadline" data-aos="fade-up" data-aos-delay="200">
+                    Studio-Free. Waste-Free. Built to Convert.
+                </p>
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Your Visual Strategy Call
+                    </a>
+                </div>
+                <p class="hero-supporting-text" data-aos="fade-up" data-aos-delay="600">
+                    Trusted by visionary creatives at $2M-$50M jewelry brands
+                </p>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Brands Section -->
+    <section id="trusted-brands" class="trusted-brands-section">
+        <div class="container">
+            <div class="trusted-content" data-aos="fade-up">
+                <p class="trusted-text">Trusted by visionary creatives at brands like:</p>
+                <div class="brands-carousel">
+                    <div class="brand-logo">Mikimoto</div>
+                    <div class="brand-logo">JL ROCKS</div>
+                    <div class="brand-logo">Maison reine</div>
+                    <div class="brand-logo">Madison</div>
+                    <div class="brand-logo">VRAI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-quotes" data-aos="fade-right">
+                    <div class="quote-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"We have the collection — but no visuals to launch."</p>
+                    </div>
+                    <div class="quote-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Our models don't reflect our brand's diversity."</p>
+                    </div>
+                    <div class="quote-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Every shoot costs more and delivers less."</p>
+                    </div>
+                </div>
+                <div class="problem-story" data-aos="fade-left">
+                    <h2>The Luxury Jewelry Content Crisis</h2>
+                    <p>You're stuck in an endless cycle of expensive photoshoots, scheduling nightmares, and content that never quite captures your brand's vision. Meanwhile, launch deadlines are approaching, and your competitors are already flooding social media with stunning visuals.</p>
+                    <p>It's time to break free from the traditional content bottleneck.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section">
+        <div class="container">
+            <div class="solution-content" data-aos="fade-up">
+                <h2>What is LUXAI?</h2>
+                <p class="solution-intro">LUXAI is a system, not a service. It replaces chaos with structure.</p>
+                <div class="solution-highlight">
+                    <div class="highlight-item">
+                        <span class="number">3</span>
+                        <span class="text">AI images</span>
+                    </div>
+                    <div class="plus">+</div>
+                    <div class="highlight-item">
+                        <span class="number">3</span>
+                        <span class="text">videos</span>
+                    </div>
+                    <div class="equals">=</div>
+                    <div class="highlight-item">
+                        <span class="number">72</span>
+                        <span class="text">hour delivery</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="price">$420</span>
+                        <span class="text">flat</span>
+                    </div>
+                </div>
+                <p class="solution-tagline">No models. No studio. Just results.</p>
+            </div>
+            <div class="solution-preview" data-aos="fade-up" data-aos-delay="200">
+                <div class="preview-carousel">
+                    <div class="preview-slide active">
+                        <img src="/Imgggg/Img/Img4.jpeg">
+                    </div>
+                    <div class="preview-slide">
+                        <img src="/Imgggg/Img/Img5.jpeg">
+                    </div>
+                    <div class="preview-slide">
+                        <img src="/Imgggg/Img/Img6.jpeg">
+                    </div>
+                </div>
+            </div>
+                <div class="solution-preview" data-aos="fade-up" data-aos-delay="200">
+                <div class="preview-carousel">
+                    <div class="preview-slide active">
+                        <img src="/Imgggg/Img/img1.jpeg">
+                    </div>
+                    <div class="preview-slide">
+                        <img src="/Imgggg/Img/Img2.jpeg">
+                    </div>
+                    <div class="preview-slide">
+                        <img src="/Imgggg/Img/Img3.jpeg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Stack Section -->
+    <section id="value-stack" class="value-stack-section">
+        <div class="container">
+            <div class="value-header" data-aos="fade-up">
+                <h2>What You Get (Without the Headaches)</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <p>3 high-end AI model images</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <p>3 cinematic 360° or floating product videos</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <p>Models tailored to brand: skin tone, age, vibe</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <p>Formatted for IG, PDP, ads, email banners</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p>Delivered in 72 hours</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="value-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <p>1 round of revisions included</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="value-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <p>No logistics, studios, or scheduling chaos</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="800">
+                    <div class="value-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <p>Flat $420 — no surprise fees</p>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="900">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <p>Eco-conscious & inclusive by design</p>
+                </div>
+            </div>
+            <div class="value-cta" data-aos="fade-up" data-aos-delay="1000">
+                <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-secondary">
+                    Want to see how this fits your launch?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="how-header" data-aos="fade-up">
+                <h2>How It Works</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Creative Calibration™</h3>
+                        <p>Align on look/feel</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Visual Plan</h3>
+                        <p>Decide format needs</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>AI Render</h3>
+                        <p>We build your set</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Refinement</h3>
+                        <p>1 revision included</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Asset Delivery</h3>
+                        <p>Launch-ready in 72 hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="how-cta" data-aos="fade-up" data-aos-delay="600">
+                <a href="#gallery" class="btn-outline">
+                    See sample from a recent launch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="results-grid">
+                <div class="results-stats" data-aos="fade-right">
+                    <h2>Real Results from Real Brands</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">43%</div>
+                            <div class="stat-label">increase in sales</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">60-80%</div>
+                            <div class="stat-label">cost reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4x</div>
+                            <div class="stat-label">faster time to launch</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Global</div>
+                            <div class="stat-label">resonance from visuals</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="results-testimonial" data-aos="fade-left">
+                    <div class="testimonial-card">
+                        <div class="quote-mark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <blockquote>
+                            "We launched 4 months ahead of schedule and saved $50K. The visuals looked like a $30K shoot."
+                        </blockquote>
+                        <cite>— CMO, $2M Luxury Jewelry Brand</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Section -->
+    <!-- <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header" data-aos="fade-up">
+                <h2>Visual Gallery</h2>
+                <p>See the quality and versatility of our AI-generated jewelry visuals</p>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img1.png">
+                    </div>
+                   
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img2.png">
+                    </div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img3.png">
+                    </div>
+     
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img4.png">
+                    </div>
+    
+                </div>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img5.png">
+                    </div>
+                   
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img6.png">
+                    </div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img7.png">
+                    </div>
+     
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="img8.png">
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!-- Visual Gallery -->
+  <h1 class="brand-name">Jared</h1>
+ <section class="section-container" aria-label="Jewelry models with rings, necklaces and pendants"id="gallery">
+   
+    <div class="model-card" tabindex="0" aria-describedby="desc1">
+      <img
+        src="/Imgggg/Jared/model1.jpeg"
+        alt="Woman with translucent black veil partially covering her face, showcasing elegant gold rings on her hand near lips and blue eyes"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Jared/jewel.png"
+        alt="Stacked gold rings with textured bands and subtle diamond as centerpiece"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc2">
+      <img
+        src="/Imgggg/Jared/model2.jpeg"
+        alt="Young woman with soft shadows on her face wearing a delicate gold chain necklace with a letter M pendant"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Jared/gold ring jared.avif"
+        alt="Gold chain necklace with a letter M pendant"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc3">
+      <img
+        src="/Imgggg/Jared/model3.jpeg"
+        alt="Young woman in a white top with soft light highlighting her skin and subtle makeup"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Jared/jewel.png"
+        alt="Oval deep blue sapphire pendant framed with diamonds in silver teardrop shape"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+  </section>
+
+   <h1 class="brand-name">JL Rocks</h1>
+ <section class="section-container" aria-label="Jewelry models with rings, necklaces and pendants">
+   
+    <div class="model-card" tabindex="0" aria-describedby="desc1">
+      <img
+        src="/Imgggg/JL Rocks/model1.jpeg"
+        alt="Woman with translucent black veil partially covering her face, showcasing elegant gold rings on her hand near lips and blue eyes"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/JL Rocks/jewel1.jpeg"
+        alt="Stacked gold rings with textured bands and subtle diamond as centerpiece"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc2">
+      <img
+        src="/Imgggg/JL Rocks/model2.jpeg"
+        alt="Young woman with soft shadows on her face wearing a delicate gold chain necklace with a letter M pendant"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/JL Rocks/jewel2.jpeg"
+        alt="Gold chain necklace with a letter M pendant"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc3">
+      <img
+        src="/Imgggg/JL Rocks/model3.jpeg"
+        alt="Young woman in a white top with soft light highlighting her skin and subtle makeup"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/JL Rocks/jewel3.jpeg"
+        alt="Oval deep blue sapphire pendant framed with diamonds in silver teardrop shape"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+  </section>
+
+   <h1 class="brand-name">Mikimoto</h1>
+ <section class="section-container" aria-label="Jewelry models with rings, necklaces and pendants">
+   
+    <div class="model-card" tabindex="0" aria-describedby="desc1">
+      <img
+        src="/Imgggg/Mikimoto/model1.jpeg"
+        alt="Woman with translucent black veil partially covering her face, showcasing elegant gold rings on her hand near lips and blue eyes"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Mikimoto/jewel1.jpg"
+        alt="Stacked gold rings with textured bands and subtle diamond as centerpiece"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc2">
+      <img
+        src="/Imgggg/Mikimoto/model2.jpeg"
+        alt="Young woman with soft shadows on her face wearing a delicate gold chain necklace with a letter M pendant"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Mikimoto/jewel2.jpg"
+        alt="Gold chain necklace with a letter M pendant"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="model-card" tabindex="0" aria-describedby="desc3">
+      <img
+        src="/Imgggg/Mikimoto/model3.jpeg"
+        alt="Young woman in a white top with soft light highlighting her skin and subtle makeup"
+        class="model-image"
+      />
+      <img
+        src="/Imgggg/Mikimoto/earrings.jpg"
+        alt="Oval deep blue sapphire pendant framed with diamonds in silver teardrop shape"
+        class="jewelry-image"
+        aria-hidden="true"
+      />
+    </div>
+  </section>
+    <!-- Qualification Section -->
+    <section id="qualification" class="qualification-section">
+        <div class="container">
+            <div class="qualification-grid">
+                <div class="qualification-for" data-aos="fade-right">
+                    <h3>This is for you if:</h3>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> You launch 10–100 SKUs per quarter</li>
+                        <li><i class="fas fa-check"></i> You value inclusive, luxury-aligned visuals</li>
+                        <li><i class="fas fa-check"></i> You want zero-reshoot speed</li>
+                        <li><i class="fas fa-check"></i> You're done burning $10K+ per campaign</li>
+                    </ul>
+                </div>
+                <div class="qualification-not" data-aos="fade-left">
+                    <h3>Not a fit if:</h3>
+                    <ul class="cross-list">
+                        <li><i class="fas fa-times"></i> You want DIY design tools</li>
+                        <li><i class="fas fa-times"></i> You're not launching new collections</li>
+                        <li><i class="fas fa-times"></i> You want 10 rounds of back-and-forth</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qualification-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-primary">
+                    <i class="fas fa-calendar-alt"></i>
+                    Book Your Strategy Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Comparison Section -->
+    <section id="cost-comparison" class="cost-comparison-section">
+        <div class="container">
+            <div class="comparison-grid">
+                <div class="comparison-column traditional" data-aos="fade-right">
+                    <div class="comparison-header">
+                        <h3>What This Would Normally Cost</h3>
+                        <div class="header-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                    <div class="comparison-content">
+                        <div class="cost-item">
+                            <i class="fas fa-times"></i>
+                            <span class="cost-description">3 on-brand product images</span>
+                            <span class="cost-amount">$450–$600</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-times"></i>
+                            <span class="cost-description">3 professional 360° or floating product videos</span>
+                            <span class="cost-amount">$400–$600</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-times"></i>
+                            <span class="cost-description">Model sourcing + styling</span>
+                            <span class="cost-amount">$1000+</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-times"></i>
+                            <span class="cost-description">Studio rental + lighting setup</span>
+                            <span class="cost-amount">$1000+</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-times"></i>
+                            <span class="cost-description">1–2 weeks production + revisions</span>
+                            <span class="cost-amount">$0–$1,000+</span>
+                        </div>
+                    </div>
+                    <div class="comparison-total traditional-total">
+                        <span class="total-label">💸 TOTAL:</span>
+                        <span class="total-amount">$3,300+ per launch</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-divider" data-aos="fade-up">
+                    <div class="divider-line"></div>
+                    <div class="divider-text">VS</div>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="comparison-column luxai" data-aos="fade-left">
+                    <div class="comparison-header">
+                        <h3>What You Get With LUXAI</h3>
+                        <div class="header-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="comparison-content">
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">3 high-end, AI-rendered product images</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">3 cinematic 360° or motion product videos</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">On-brand model face, tone, lighting, background</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">72-hour delivery</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">1 round of refinements</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                        <div class="cost-item">
+                            <i class="fas fa-check"></i>
+                            <span class="cost-description">No models, no studio, no post-shoot chaos</span>
+                            <span class="cost-included">Included</span>
+                        </div>
+                    </div>
+                    <div class="comparison-total luxai-total">
+                        <span class="total-label">💎 TOTAL:</span>
+                        <span class="total-amount">$450 flat</span>
+                        <span class="total-subtitle">No add-ons. No hidden fees. No delays.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-callout" data-aos="fade-up" data-aos-delay="400">
+                <p class="callout-text">You're not getting less.</p>
+                <p class="callout-emphasis">You're getting the exact same visual outcome — faster, cleaner, smarter, and infinitely more scalable.</p>
+            </div>
+            
+            <div class="comparison-cta" data-aos="fade-up" data-aos-delay="600">
+                <p class="cta-text">Book your strategy call now. Let's see how this would look with your collection.</p>
+                <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-primary btn-large">
+                    <i class="fas fa-calendar-alt"></i>
+                    Book My Visual Sprint Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content" data-aos="fade-up">
+                <h2>Let's map your visual system before your next drop.</h2>
+                <p>You'll walk away with clarity, a timeline, and an optional free sample.</p>
+                <div class="final-cta-button">
+                    <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book My Visual Sprint Call
+                    </a>
+                    <p class="urgency-text">Only 5 new client slots per month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Nudge Section -->
+    <section id="final-nudge" class="final-nudge-section">
+        <div class="container">
+            <div class="nudge-content" data-aos="fade-up">
+                <h2>Don't Wait</h2>
+                <p>You're still relying on studios that delay launches and drain budgets.</p>
+                <p>Meanwhile, your competitor is already posting scroll-stopping visuals… built without a single photoshoot.</p>
+                <p class="nudge-emphasis">Don't let speed — or content — hold you back.</p>
+                <div class="nudge-cta">
+                    <a href="https://calendly.com/contact-luxaimodels/30min" class="btn-accent">
+                        Ready to evolve your visual system?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Your Visual Strategy Call</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Your Position *</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select your position</option>
+                            <option value="cmo">CMO</option>
+                            <option value="creative-director">Creative Director</option>
+                            <option value="founder">Founder</option>
+                            <option value="marketing-director">Marketing Director</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="revenue">Annual Revenue *</label>
+                        <select id="revenue" name="revenue" required>
+                            <option value="">Select revenue range</option>
+                            <option value="2-5m">$2M - $5M</option>
+                            <option value="5-10m">$5M - $10M</option>
+                            <option value="10-25m">$10M - $25M</option>
+                            <option value="25-50m">$25M - $50M</option>
+                            <option value="50m+">$50M+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="launch-frequency">How often do you launch new collections?</label>
+                        <select id="launch-frequency" name="launch-frequency">
+                            <option value="">Select frequency</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="bi-annually">Twice a year</option>
+                            <option value="annually">Annually</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about your biggest visual content challenge</label>
+                        <textarea id="message" name="message" rows="4" placeholder="e.g., High costs, slow turnaround, inconsistent quality..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">
+                        <i class="fas fa-calendar-alt"></i>
+                        Schedule My Strategy Call
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
